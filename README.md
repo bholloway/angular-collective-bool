@@ -59,7 +59,9 @@ function barController($scope, myBoolean) {
 
 ### Reduce function
 
-Every time the getter is invoked, the respective field is sampled across all instances and the result is collected into an Array. The `reduceFn` is called with the Array as the `this` of the invocation.
+Every time the getter is invoked, the respective field is sampled across all instances and the result is collected into an Array. The Array is [reduced]() using the `reduceFn`.
+
+A special case is made for `Array.prototype.some` and `Array.prototype.every`. These are invoked using the value Array as the invocation `this`.
 
 The order of values in the Array is consistent with the order in which instances are created. All values are equal, there is no way to determine which value is from which instance.
 

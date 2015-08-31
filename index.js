@@ -12,6 +12,9 @@ function angularMultitonReduce(reduceFn, factoryFn) {
   reduceFn = (typeof reduceFn === 'function') ? reduceFn : emptyReduceFn;
   factoryFn = (typeof factoryFn === 'function') ? factoryFn : defaultFactoryFn;
 
+  // determine the invocation style
+  var useThis = (reduceFn === Array.prototype.some) || (reduceFn === Array.prototype.every);
+
   // return value is the Angular 1.x factory method
   return /** @ngInject */ function factory($rootScope) {
     $rootScope.$on('$destroy', dispose);
@@ -41,7 +44,7 @@ function angularMultitonReduce(reduceFn, factoryFn) {
         }
 
         // invoke the reduce function with the value list
-        return reduceFn.call(values);
+        return useThis ? reduceFn.call(values, Boolean) : values.reduce(reduceFn, undefined);
       };
     }
 
