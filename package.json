@@ -1,0 +1,22 @@
+{
+  "name": "angular-collective-bool",
+  "version": "0.0.1",
+  "description": "An Angular 1.x boolean composed from a collection of dynamic multiton values",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bholloway/angular-collective-bool.git"
+  },
+  "keywords": [
+    "boolean",
+    "lockout",
+    "multiton",
+    "angular"
+  ],
+  "author": "bholloway",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bholloway/angular-collective-bool/issues"
+  },
+  "homepage": "https://github.com/bholloway/angular-collective-bool#readme"
+}
