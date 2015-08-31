@@ -1,6 +1,6 @@
 #angular-multiton-reduce
 
-An Angular 1.x property composed from a collection of dynamic multiton values
+An Angular 1.x model composed from a collection of dynamic multiton values
 
 ## Installation
 
