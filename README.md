@@ -57,8 +57,16 @@ function barController($scope, myBoolean) {
 }
 ```
 
-Every time the invocation occurs, the given field is sampled across all instances and the result is collected into an Array. The `reduceFn` is called with the Array as the `this` of the invocation.
+### Reduce function
+
+Every time the getter is invoked, the respective field is sampled across all instances and the result is collected into an Array. The `reduceFn` is called with the Array as the `this` of the invocation.
 
 The order of values in the Array is consistent with the order in which instances are created. All values are equal, there is no way to determine which value is from which instance.
+
+### Create function
+
+An optional `createFn` may be supplied which will create the instance each time a unique `getInstance()` call is made.
+
+## Limitations
 
 Relies on angular change detection. There is no [observable](https://en.wikipedia.org/wiki/Observer_pattern).

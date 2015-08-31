@@ -1,5 +1,5 @@
 {
-  "name": "angular-collective-bool",
+  "name": "angular-multiton-reduce",
   "version": "0.0.1",
   "description": "An Angular 1.x model composed from a collection of dynamic multiton values",
   "main": "index.js",
