@@ -68,7 +68,7 @@ function angularMultitonReduce(reduceFn, factoryFn) {
 
         // add the method that will remove it
         removeFns.push(removeInstance);
-        if ('$on' in key) {
+        if (typeof key.$on === 'function') {
           key.$on('$destroy', removeInstance);
         }
       }
