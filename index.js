@@ -16,7 +16,9 @@ function angularMultitonReduce(reduceFn, factoryFn) {
   var useThis = (reduceFn === Array.prototype.some) || (reduceFn === Array.prototype.every);
 
   // return value is the Angular 1.x factory method
-  return /** @ngInject */ function factory($rootScope) {
+  return function factory($rootScope) {
+    'ngInject';
+
     $rootScope.$on('$destroy', dispose);
 
     // instances are specific to this single instance
@@ -31,7 +33,7 @@ function angularMultitonReduce(reduceFn, factoryFn) {
 
     /**
      * Create a function that retrieves the value of the given field.
-     * @param @param {string} field The field to consider
+     * @param {string} field The field to consider
      * @returns {function} A getter for the given field
      */
     function createGetter(field) {
